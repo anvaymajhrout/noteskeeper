@@ -1,0 +1,106 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    width: 80%;
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#note-input {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#add-note-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#add-note-button:hover {
+    background-color: #0056b3;
+}
+
+.notes-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.papper {
+    position: relative;
+    box-sizing: border-box;
+    width: 200px;
+    height: 200px;
+    background: #ffffff;
+    background-image: linear-gradient(#ffffff 1.1rem, #ccc 1.2rem);
+    background-size: 100% 1.2rem;
+    border-radius: 10px;
+    cursor: move;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.papper::before,
+.papper::after {
+    position: absolute;
+    content: "";
+    bottom: 10px;
+    width: 40%;
+    height: 10px;
+    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.7);
+    z-index: -1;
+    transition: all 0.3s ease;
+}
+
+.papper::before {
+    left: 15px;
+    transform: skew(-5deg) rotate(-5deg);
+}
+
+.papper::after {
+    right: 15px;
+    transform: skew(5deg) rotate(5deg);
+}
+
+.papper:hover::before,
+.papper:hover::after {
+    box-shadow: 0 2px 14px rgba(0, 0, 0, 0.4);
+}
+
+.note-date {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 5px;
+}
